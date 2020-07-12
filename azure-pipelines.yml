@@ -21,6 +21,8 @@ steps:
     command: 'build'
     projects: 'pipelines-dotnet-core.csproj'
 
+- task: PublishBuildArtifacts@1
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
