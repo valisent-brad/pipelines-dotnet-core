@@ -28,5 +28,5 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Pay-As-You-Go(5bcab076-de73-47f8-a9ae-3e80c0e76aa4)'
     appType: 'webApp'
-    WebAppName: 'valisent-brad.pipelines-dotnet-core'
+    WebAppName: 'valisent-brad-pipelines-dotnet-core'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
