@@ -22,6 +22,11 @@ steps:
     command: 'build'
     projects: 'pipelines-dotnet-core.csproj'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    
 - task: AzureRmWebAppDeployment@4
   displayName: Azure App Service Deploy
   inputs:
@@ -29,4 +34,4 @@ steps:
     azureSubscription: 'Pay-As-You-Go(5bcab076-de73-47f8-a9ae-3e80c0e76aa4)'
     appType: 'webApp'
     WebAppName: 'valisent-brad-pipelines-dotnet-core'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
+    package: $(System.DefaultWorkingDirectory)/**/*.zip 
