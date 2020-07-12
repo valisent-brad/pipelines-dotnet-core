@@ -20,3 +20,11 @@ steps:
   inputs:
     command: 'build'
     projects: 'pipelines-dotnet-core.csproj'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(5bcab076-de73-47f8-a9ae-3e80c0e76aa4)'
+    appType: 'webApp'
+    WebAppName: 'valisent-brad.pipelines-dotnet-core'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
